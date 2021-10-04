@@ -1,0 +1,19 @@
+$from_email='admin@google.ru'; // От кого (e-mail)
+$mail = new PHPMailer();   
+$mail->From = $from_email;      
+$mail->FromName = $from_name ;  
+$mail->AddAddress($to, $to_adres); 
+$mail->IsHTML(true);        // Вид письма (HTML)   
+$mail->Subject = $subject;   
+$mail->Body = $messag;  
+if ($mail->Send()) 
+{                    
+    $res = 'Отослали';  
+} 
+else  
+{  
+   $res = 'Ошибка'; 
+   echo 'Mailer Error: '.$mail->ErrorInfo;  
+} 
+ echo $res; 
+?>
